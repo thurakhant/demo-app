@@ -71,20 +71,12 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (BuildContext context) => LoginSuccessfulScreen()),
-                  // );
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (BuildContext context) => LoginSuccessfulScreen()),
-                  // );
                   if (email.text.isEmpty || password.text.isEmpty) {
                     ScaffoldMessenger.of(
                       context,
                     ).showSnackBar(SnackBar(content: Text("Email and password are required")));
-                  } else if (email.text.contains("@") && password.text.length > 6) {
-                    if (email.text == "admin@gmail.com" && password.text == "thurakhantthein") {
+                  } else if (password.text.length < 6) {
+                    if (email.text == "admin" && password.text == "12345") {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
