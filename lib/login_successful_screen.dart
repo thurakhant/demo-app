@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/here_screen.dart';
 
 class LoginSuccessfulScreen extends StatelessWidget {
   const LoginSuccessfulScreen({super.key});
@@ -54,8 +55,23 @@ class LoginSuccessfulScreen extends StatelessWidget {
                 ],
               ),
             ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => HereScreen(),
+                  ),
+                );
+              },
+              child: Text("Move to here screen"),
+            ),
+
             SizedBox(height: 10),
-            Text("Activity Bar", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            Text(
+              "Activity Bar",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
             SizedBox(height: 10),
             DefaultTabController(
               length: 2,

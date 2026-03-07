@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/login_successful_screen.dart';
 
+
 // Class
 class LoginScreen extends StatelessWidget {
   // Constructor
@@ -77,12 +78,13 @@ class LoginScreen extends StatelessWidget {
                     ).showSnackBar(SnackBar(content: Text("Email and password are required")));
                   } else if (password.text.length < 6) {
                     if (email.text == "admin" && password.text == "12345") {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => LoginSuccessfulScreen(),
-                        ),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (BuildContext context) => LoginSuccessfulScreen(),
+                      //   ),
+                      // );
+                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=> LoginSuccessfulScreen()),);
                     } else {
                       ScaffoldMessenger.of(
                         context,
