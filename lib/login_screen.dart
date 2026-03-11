@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/login_successful_screen.dart';
-
+import 'package:myapp/profile_screen.dart';
 
 // Class
 class LoginScreen extends StatelessWidget {
@@ -84,7 +83,10 @@ class LoginScreen extends StatelessWidget {
                       //     builder: (BuildContext context) => LoginSuccessfulScreen(),
                       //   ),
                       // );
-                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=> LoginSuccessfulScreen()),);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (BuildContext context) => ProfileScreen()),
+                      );
                     } else {
                       ScaffoldMessenger.of(
                         context,

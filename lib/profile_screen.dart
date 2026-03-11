@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/here_screen.dart';
 
-class LoginSuccessfulScreen extends StatelessWidget {
-  const LoginSuccessfulScreen({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     TextStyle profileTextStyle = TextStyle(
@@ -55,36 +60,32 @@ class LoginSuccessfulScreen extends StatelessWidget {
                 ],
               ),
             ),
+
             TextButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => HereScreen(),
-                  ),
+                  MaterialPageRoute(builder: (BuildContext context) => HereScreen()),
                 );
               },
               child: Text("Move to here screen"),
             ),
+            SizedBox(height: 10),
+            Text("Activity Bar", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            SizedBox(height: 10),
 
-            SizedBox(height: 10),
-            Text(
-              "Activity Bar",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-            DefaultTabController(
-              length: 2,
-              child: SizedBox(
-                width: double.infinity,
-                child: TabBar(
-                  tabs: [
-                    Tab(text: 'Home'),
-                    Tab(text: 'Hisotry'),
-                  ],
-                ),
-              ),
-            ),
+            // DefaultTabController(
+            //   length: 2,
+            //   child: SizedBox(
+            //     width: double.infinity,
+            //     child: TabBar(
+            //       tabs: [
+            //         Tab(text: 'Home'),
+            //         Tab(text: 'Hisotry'),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
