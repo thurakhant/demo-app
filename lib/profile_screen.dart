@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/here_screen.dart';
+import 'package:myapp/custom_button.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -60,17 +60,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (BuildContext context) => HereScreen()),
-                );
+            SizedBox(height: 10),
+            CustomButton(
+              buttonText: "Move",
+              borderRadius: 5,
+              width: double.infinity,
+              height: 48,
+              onTap: () {
+                print("Move");
               },
-              child: Text("Move to here screen"),
             ),
             SizedBox(height: 10),
+            CustomButton(
+              buttonText: "Set",
+              borderRadius: 30,
+              width: double.infinity,
+              height: 48,
+              onTap: () {
+                print("Set");
+              },
+            ),
             Text("Activity Bar", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             SizedBox(height: 10),
 
