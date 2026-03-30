@@ -75,8 +75,8 @@ class LoginScreen extends StatelessWidget {
                     ScaffoldMessenger.of(
                       context,
                     ).showSnackBar(SnackBar(content: Text("Email and password are required")));
-                  } else if (password.text.length < 6) {
-                    if (email.text == "admin" && password.text == "12345") {
+                  } else if (password.text.length < 10) {
+                    if (email.text == "admin" && password.text == "1") {
                       // Navigator.push(
                       //   context,
                       //   MaterialPageRoute(
