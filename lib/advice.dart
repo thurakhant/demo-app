@@ -1,10 +1,10 @@
 class Advice {
-  final String advice;
   final int id;
+  final String advice;
 
-  Advice({required this.advice, required this.id});
+  Advice({required this.id, required this.advice});
 
   factory Advice.fromJson(Map<String, dynamic> json) {
-    return Advice(advice: json['slip']['advice'], id: json['slip']['id']);
+    return Advice(id: json["slip"]["id"], advice: json["slip"]["advice"]);
   }
 }

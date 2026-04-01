@@ -8,17 +8,8 @@ class ApiService {
     final response = await oak.get(Uri.parse("https://api.adviceslip.com/advice"));
 
     if (response.statusCode == 200) {
-      var decode = jsonDecode(response.body);
-      var json = Advice.fromJson(decode);
-      return json;
-    } else {
-      throw Exception();
+      return Advice.fromJson(jsonDecode(response.body));
     }
+    return Advice(id: 1, advice: "The Data is not yet");
   }
-}
-
-void main() {
-  ApiService obj = ApiService();
-
-  obj.getAdvice();
 }

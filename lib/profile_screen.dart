@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/api_call.dart';
+import 'package:myapp/advice_screen.dart';
 import 'package:myapp/custom_button.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -68,7 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: double.infinity,
               height: 48,
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ApiCallScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AdviceScreen()));
               },
             ),
             SizedBox(height: 10),
