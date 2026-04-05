@@ -13,17 +13,32 @@ class _AdviceScreenState extends State<AdviceScreen> {
   final ApiService api = ApiService();
   Advice? data;
 
+  void _clickButton() async {
+    var response = await api.getAdvice();
+
+    setState(() {
+      data = response;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    String adviceText = "Hello World";
     return Scaffold(
-      body: Center(
-        child: SafeArea(
-          child: Column(
-            children: [
-              Text(adviceText, style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
-              TextButton(onPressed: () {}, child: Text("Generate Advice")),
-            ],
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Center(
+          child: SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("${data?.id}", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                Text(
+                  "${data?.advice}",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                TextButton(onPressed: _clickButton, child: Text("Generate Advice")),
+              ],
+            ),
           ),
         ),
       ),
