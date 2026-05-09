@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/features/counter_app/view/counter_view.dart';
+import 'package:myapp/features/projects/views/project_view.dart';
 
 void main() {
   runApp(FlutterApp());
@@ -13,6 +13,6 @@ class FlutterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: CounterView());
+    return MaterialApp(home: ProjectView());
   }
 }
