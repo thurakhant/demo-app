@@ -35,6 +35,25 @@ class ProjectView extends StatelessWidget {
                 description:
                     'A robust data processing engine designed for high-throughput environments.',
               ),
+              ProjectCard(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => ProjectDetailsView(
+                        text: 'Zen App',
+                        description:
+                            'Delta Dashboard represents the pinnacle of autonomous data processing, engineered to function as a high-fidelity',
+                        image: "assets/zen_app.png",
+                      ),
+                    ),
+                  );
+                },
+                image: 'assets/zen_app.png',
+                title: 'Zen App',
+                description:
+                    'A mindful approach to daily task management, focusing on singular objective completion.',
+              ),
             ],
           ),
         ),

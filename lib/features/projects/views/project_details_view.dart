@@ -15,7 +15,7 @@ class ProjectDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text("Project Details View")),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
