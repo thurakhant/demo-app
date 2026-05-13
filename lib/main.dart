@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/features/projects/views/project_view.dart';
+import 'package:myapp/features/todo/controller/todo_controller.dart';
+import 'package:myapp/features/todo/view/todo_view.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(FlutterApp());
@@ -13,6 +15,9 @@ class FlutterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: ProjectView());
+    return ChangeNotifierProvider(
+      create: (context) => TodoController(),
+      child: MaterialApp(home: TodoView()),
+    );
   }
 }
