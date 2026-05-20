@@ -20,6 +20,7 @@ class TodoView extends StatelessWidget {
                 onPressed: () {
                   if (controller.text.isNotEmpty) {
                     context.read<TodoController>().addTask(controller.text);
+                    //
                     controller.clear();
                   }
                 },
@@ -34,16 +35,20 @@ class TodoView extends StatelessWidget {
                   itemCount: controller.task.length,
                   itemBuilder: (context, index) {
                     final task = controller.task[index];
-
                     return ListTile(
                       title: Text(task.title),
                       leading: Checkbox(
-                        value: false,
+                        value: task.isDone,
                         onChanged: (value) {
-                          print(value);
+                          controller.toogleTask(index);
                         },
                       ),
-                      trailing: IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
+                      trailing: IconButton(
+                        onPressed: () {
+                          controller.deleteTask(index);
+                        },
+                        icon: Icon(Icons.delete),
+                      ),
                     );
                   },
                 );

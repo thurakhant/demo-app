@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/features/todo/model/todo_model.dart';
 
 class TodoController extends ChangeNotifier {
+  // Store the value
   final List<Task> task = [];
 
   void addTask(String title) {
@@ -9,7 +10,13 @@ class TodoController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void deleteTask() {}
+  void deleteTask(int index) {
+    task.removeAt(index);
+    notifyListeners();
+  }
 
-  void toogleTask() {}
+  void toogleTask(int index) {
+    task[index].toggleDone();
+    notifyListeners();
+  }
 }
