@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/features/todo/controller/todo_controller.dart';
-import 'package:myapp/features/todo/view/todo_view.dart';
+import 'package:myapp/features/bookmark/controller/bookmark_controller.dart';
+import 'package:myapp/features/bookmark/views/course_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(FlutterApp());
+  runApp(ChangeNotifierProvider(create: (context) => BookmarkController(), child: FlutterApp()));
 }
 
 // Stateless Widget
@@ -15,9 +15,12 @@ class FlutterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => TodoController(),
-      child: MaterialApp(home: TodoView()),
+    // final themeProvider = context.watch<ThemeController>();
+    return MaterialApp(
+      // themeMode: themeProvider.themeMode,
+      // theme: ThemeData.light(useMaterial3: true),
+      // darkTheme: ThemeData.dark(useMaterial3: true),
+      home: CourseScreen(),
     );
   }
 }
