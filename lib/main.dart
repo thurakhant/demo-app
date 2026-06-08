@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/features/bookmark/controller/bookmark_controller.dart';
-import 'package:myapp/features/bookmark/views/course_screen.dart';
+// import 'package:myapp/features/bookmark/controller/bookmark_controller.dart';
+import 'package:myapp/features/profile/controller/profile_controller.dart';
+import 'package:myapp/features/profile/view/profile_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(create: (context) => BookmarkController(), child: FlutterApp()));
+  runApp(ChangeNotifierProvider(create: (context) => ProfileController(), child: FlutterApp()));
 }
 
 // Stateless Widget
@@ -20,7 +21,7 @@ class FlutterApp extends StatelessWidget {
       // themeMode: themeProvider.themeMode,
       // theme: ThemeData.light(useMaterial3: true),
       // darkTheme: ThemeData.dark(useMaterial3: true),
-      home: CourseScreen(),
+      home: ProfilePage(),
     );
   }
 }
