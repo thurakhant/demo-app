@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-// import 'package:myapp/features/bookmark/controller/bookmark_controller.dart';
-import 'package:myapp/features/profile/controller/profile_controller.dart';
-import 'package:myapp/features/profile/view/profile_page.dart';
+import 'package:myapp/features/student_register/controllers/students_register_controller.dart';
+import 'package:myapp/features/student_register/views/student_register.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(create: (context) => ProfileController(), child: FlutterApp()));
+  runApp(
+    ChangeNotifierProvider(create: (context) => StudentsRegisterController(), child: FlutterApp()),
+  );
 }
 
 // Stateless Widget
@@ -21,7 +22,7 @@ class FlutterApp extends StatelessWidget {
       // themeMode: themeProvider.themeMode,
       // theme: ThemeData.light(useMaterial3: true),
       // darkTheme: ThemeData.dark(useMaterial3: true),
-      home: ProfilePage(),
+      home: StudentRegister(),
     );
   }
 }
